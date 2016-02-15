@@ -66,5 +66,6 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        System.out.println(stock.toString());
     }
 }
