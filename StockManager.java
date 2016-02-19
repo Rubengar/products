@@ -113,11 +113,32 @@ public class StockManager
     {
         for (Product producto: stock)
         {
-            if (numberInStock(producto.getID()) < num)
+            if (producto.getQuantity() < num)
             {
                 System.out.println(producto);
             }
         }
     }
-    
+
+    /**
+     * Metodo que permite buscar un producto por el nombre
+     */
+    public Product findProduct(String name)
+    {
+        Product producto = null;
+        int index = 0;
+        boolean encontrado = false;
+        while(!encontrado && index < stock.size())
+        {
+            if (stock.get(index).getName().equals(name))
+            {
+                producto = stock.get(index);
+                encontrado = true;
+            }
+            index++;
+        }
+        return producto ;
+    }
+   
 }
+
