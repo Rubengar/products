@@ -26,7 +26,14 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        if (findProduct(item.getID()) == null)
+        {
+            stock.add(item);
+        }
+        else
+        {
+            System.out.println("Ese producto ya está en la tienda");
+        }
     }
 
     /**
@@ -99,6 +106,9 @@ public class StockManager
         }
     }
 
+    /**
+     * Metodo que imprime los detalles de los productos que esta por debajo de un numero que le pasa el usuario
+     */
     public void underGivenNumberInStock(int num)
     {
         for (Product producto: stock)
@@ -109,4 +119,5 @@ public class StockManager
             }
         }
     }
+    
 }
