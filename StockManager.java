@@ -41,7 +41,8 @@ public class StockManager
         if (product != null)
         {
             product.increaseQuantity(amount);
-        }else
+        }
+        else
         {
             System.out.println("ERROR no existe ningun producto con ese id");
         }
@@ -95,6 +96,17 @@ public class StockManager
         for(Product producto: stock )
         {
             System.out.println(producto);
+        }
+    }
+
+    public void underGivenNumberInStock(int num)
+    {
+        for (Product producto: stock)
+        {
+            if (numberInStock(producto.getID()) < num)
+            {
+                System.out.println(producto);
+            }
         }
     }
 }
